@@ -1,14 +1,7 @@
 
 <div class="row">
 	<div class="col-lg-1" style="text-align: center;">
-		<% if user.avatar.exists? then %>
-			<span style="padding-left: 5px;"><%= image_tag user.avatar.url(:thumb), class: "img-circle", style: "width: 70px; height: 70px;" %></span>
-		<% else %>
-			<span class="icon-stack" style="padding: 0px; font-size: 40px;">
-				<i class="icon-circle icon-stack-base"></i>
-				<i class="icon-user icon-light"></i>
-			</span>
-		<% end %>
+		<%= gravatar_large_for user %>
 	</div>
 	<div class="col-lg-4">
 		<h4><%= link_to user.full_name, user %></h4>

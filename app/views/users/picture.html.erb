@@ -1,0 +1,14 @@
+<h1>Change profile picture</h1>
+
+<% if @user.avatar.exists? then %>
+	<p><%= image_tag @user.avatar.url(:medium), class: "img-circle", style: "width: 120px; height: 120px;" %></p>
+<% else %>
+	<span class="icon-stack" style="padding: 0px; font-size: 94px;">
+		<i class="icon-circle icon-stack-base"></i>
+		<i class="icon-user icon-light"></i>
+	</span>
+	<%= form_for(@user, :html => { :multipart => true }) do |form| %>
+		<%= form.file_field :avatar %>
+		<%= form.submit "Save avatar", class: "btn btn-large" %> 
+	<% end %>
+<% end %>

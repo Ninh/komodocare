@@ -7,19 +7,21 @@ class User < ActiveRecord::Base
 
 		has_many :events, dependent: :destroy
 
+		has_many :posts, :through => :events
+
 has_attached_file :avatar, :styles => { :medium => "180x180#", 
 		:thumb => "100x100#" }, 
 		:url => "/assets/users/:id/:style/:basename.:extension",
 		:path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
 
-	validates_attachment_presence :avatar
+	#validates_attachment_presence :avatar
 	validates_attachment_size :avatar, :less_than => 5.megabytes
 	validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
 
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :avatar, :date_of_birth, :avatar
+  attr_accessible :first_name, :last_name, :avatar, :date_of_birth
   attr_accessor :avatar_file_name, :avatar_file_size, :avatar_content_type
 
   	validates :password, presence: true, length: { minimum: 6 }
@@ -30,6 +32,10 @@ has_attached_file :avatar, :styles => { :medium => "180x180#",
 
 	def photo_from_url(url)
 		self.photo = open(url)
+	end
+
+	def full_email
+		"#{email}"
 	end
 
 	def full_name

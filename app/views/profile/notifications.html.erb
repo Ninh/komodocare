@@ -1,0 +1,56 @@
+<% provide(:title, "Settings") %>
+
+<div class="row-fluid">
+	<div class="span12">
+		<div class="row-fluid">
+			<div class="span3">
+				<h4 style="color: grey;">Settings</h4>
+				<hr>
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<%= link_to "Profile", settings_profile_path %>
+					</li>
+					<li><%= link_to "Picture", settings_picture_path %></li>
+					<li class="active"><%= link_to "Notifications", settings_notifications_path %></li>
+				</ul>
+			</div>
+			<div class="span9">
+				<% @user = current_user %>
+				<h4>Notifications</h4>
+				<hr>
+				<%= form_for @user, :html => { :multipart => true } do |f| %>
+					<div class="row-fluid">
+						<div class="span3" style="text-align: right;">
+							<p style="vertical-align: middle;">New Grade Posted</p>
+						</div>
+						<div class="span4">
+							<input type="checkbox" checked />
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3" style="text-align: right;">
+							<p style="vertical-align: middle;">Wishlist Course Availability</p>
+						</div>
+						<div class="span4">
+							<input type="checkbox" checked />
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span3" style="text-align: right;">
+							<p style="vertical-align: middle;">Comments on Assignments</p>
+						</div>
+						<div class="span4">
+							<input type="checkbox" checked />
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span4 offset3">
+							<%= f.submit "Save changes", class: "btn btn-primary" %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+

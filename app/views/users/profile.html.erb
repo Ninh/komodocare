@@ -1,0 +1,58 @@
+<% provide(:title, "Settings") %>
+
+<div class="row-fluid">
+	<div class="col-lg-12">
+		<div class="row-fluid">
+			<div class="col-lg-3">
+				<h4 style="color: grey;"><%= @user.full_name %></h4>
+				<hr>
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active">
+						<%= link_to "Profile Info", users_profile_path %>
+					</li>
+					<li><%= link_to "Age, height, sex...", settings_picture_path %></li>
+					<li><%= link_to "Allergies", settings_picture_path %></li>
+					<li><%= link_to "Medications", settings_notifications_path %></li>
+					<li><%= link_to "Provider Info", settings_notifications_path %></li>
+				</ul>
+			</div>
+			<div class="col-lg-9">
+				<h4>Profile Info</h4>
+				<hr>
+				<%= form_for(@user) do |f| %>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Name</p>
+						</div>
+						<div class="col-lg-4">
+							<%=  @user.first_name %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Email</p>
+						</div>
+						<div class="col-lg-4">
+							<%= @user.email %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Password</p>
+						</div>
+						<div class="col-lg-4">
+							<%= @user.password %>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-lg-4 col-lg-offset-3">
+							<%= link_to "Edit", settings_profile_path, class: "btn btn-primary" %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+

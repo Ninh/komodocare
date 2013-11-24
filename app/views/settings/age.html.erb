@@ -1,0 +1,66 @@
+<% provide(:title, "Settings") %>
+
+<div class="row-fluid">
+	<div class="col-lg-12">
+		<div class="row-fluid">
+			<div class="col-lg-3">
+				<h4 style="color: grey;">Settings</h4>
+				<hr>
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active">
+						<%= link_to "Profile", settings_profile_path %>
+					</li>
+					<li><%= link_to "Picture", settings_picture_path %></li>
+					<li><%= link_to "Notifications", settings_notifications_path %></li>
+				</ul>
+			</div>
+			<div class="col-lg-9">
+				<% @user = current_user %>
+				<h4>Profile Info</h4>
+				<hr>
+				<%= form_for(@user) do |f| %>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Date of Birth</p>
+						</div>
+						<div class="col-lg-4">
+							 <%= f.date_select :date_of_birth, :as => :date, :start_year => Date.today.year - 12,
+:end_year => 1900,
+:order => [ :day, :month, :year] %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Email</p>
+						</div>
+						<div class="col-lg-4">
+							<%= f.text_field :email %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Password</p>
+						</div>
+						<div class="col-lg-4">
+							<%= f.password_field :password %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3" style="text-align: right;">
+							<p style="vertical-align: middle;">Password Confirmation</p>
+						</div>
+						<div class="col-lg-4">
+							<%= f.password_field :password_confirmation %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4 col-lg-offset-3">
+							<%= f.submit "Save changes", class: "btn btn-primary" %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,14 +1,39 @@
 class UsersController < ApplicationController
 	def index
 		@users = User.paginate(page: params[:page])
+		#@events = @user.events.paginate(:page => params[:page])
+		#format.html # index.html.erb
+    	#format.json { render json: @events }
 	end
 
 	def show
 		@user = User.find(params[:id])
 		@events = @user.events.paginate(:page => params[:page])
+
+	end
+
+	def go_to_events
+		render :events
+		#redirect_to events
+	end
+
+	def events
+		@user = User.find(params[:id])
+	end
+
+	def age
+		@user = User.find(params[:id])
 	end
 
 	def edit
+		@user = User.find(params[:id])
+	end
+
+	def profile
+		@user = User.find(params[:id])
+	end
+
+	def picture
 		@user = User.find(params[:id])
 	end
 
@@ -36,6 +61,9 @@ class UsersController < ApplicationController
 		end
 	end
 
+
+
+
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes(params[:user])
@@ -43,9 +71,11 @@ class UsersController < ApplicationController
 			sign_in @user
 			#redirect_back
 			
-			redirect_to @user
+			redirect_to :back
 		else
-			render 'edit'
+			#render 'edit'
+			flash[:danger] = "Profile not updated"
+			redirect_to @user
 		end
 	end
 

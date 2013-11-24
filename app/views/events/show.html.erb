@@ -1,6 +1,7 @@
 <h2><%= @event.title %></h2>
 
-<%= form_for(Post.new) do |f| %>
+
+<%= form_for [@event, @event.comments.new], :remote => false do |f| %>
 <strong>Write a new post</strong>
   <div class="col-lg-4">
     <%= f.text_area :content, class: "form-control", rows: "2" %>
@@ -8,4 +9,10 @@
   <div class="actions">
     <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
   </div>
+<% end %>
+
+<% if @event.comments.exists? %>
+<strong>Number of comments</strong> <%= @event.comments.count %>
+<%= render @event.comments %>
+	Event does have comments
 <% end %>

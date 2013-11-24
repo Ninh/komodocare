@@ -12,16 +12,20 @@ class EventsController < ApplicationController
     @event = current_user.events.build(params[:event])
     if @event.save
       #redirect_to root_path, :flash => { :success => "Medical event created!" }
-      redirect_to current_user
+      redirect_to :back
     else
       @feed_items = []
       render 'static_pages/home'
     end
   end
 
+  def delete
+     @event.destroy
+  end
+
   def destroy
-    @event.destroy
-    redirect_to root_path, :flash => { :success => "Medical event deleted!" }
+    Event.find(params[:id]).destroy
+    redirect_to :back, :flash => { :success => "Medical event deleted!" }
   end
   
   private

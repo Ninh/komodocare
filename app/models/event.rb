@@ -2,6 +2,10 @@ class Event < ActiveRecord::Base
   attr_accessible :title
 
   belongs_to :user
+ # has_and_belongs_to_many :user
+
+  has_many :posts, dependent: :destroy
+  has_many :comments, :as => :commentable
   
   validates :title, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true
@@ -9,6 +13,10 @@ class Event < ActiveRecord::Base
   default_scope :order => 'events.created_at DESC'
   
   #scope :from_users_followed_by, lambda { |user| followed_by(user) }
+
+ # def user
+   # @user = User.find([:user_id])
+ # end
 
   def full_title
   	"#{title}"

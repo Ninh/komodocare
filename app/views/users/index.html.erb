@@ -1,0 +1,25 @@
+<% provide(:title, 'All Users') %>
+
+<hr>
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+	<%= form_tag users_path, class: "", style: ";", role: "search", method: :get do |f| %>    
+		<div class="input-group">
+	        <%= text_field_tag :query, params[:query], placeholder: "Search for a user...", :size => 30, class: "typeahead form-control", style: "z-index: 150 !important;", id: "typeahead" %>
+	        <span class="input-group-btn">
+	            <button class="btn btn-default" type="button"><i class="icon-search"></i></button>
+	        </span>
+	    </div>
+	<% end %>
+</div>
+</div>
+</div>
+<hr>
+<div class="container">
+<%= will_paginate %>
+
+	<%= render @users %>
+
+<%= will_paginate %>
+</div>

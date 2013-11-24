@@ -1,0 +1,10 @@
+<h2>Import Data</h2>
+
+<%= form_tag import_majors_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>
+
+<%= form_tag delete_all_majors_path, multipart: true do %>
+	<%= submit_tag "Delete all majors" %>
+<% end %>

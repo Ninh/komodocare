@@ -1,0 +1,29 @@
+<% provide(:title, "Settings") %>
+
+<div class="row-fluid">
+	<div class="span12">
+		<div class="row-fluid">
+			<div class="span3">
+				<h4 style="color: grey;">Settings</h4>
+				<hr>
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<%= link_to "Profile", settings_profile_path %>
+					</li>
+					<li class="active"><%= link_to "Picture", settings_picture_path %></li>
+					<li><%= link_to "Notifications", settings_notifications_path %></li>
+				</ul>
+			</div>
+			<div class="span9">
+				<% @user = current_user %>
+				<h4>Change Profile Picture</h4>
+				<hr>
+				<%= form_for @user, :html => { :multipart => true } do |f| %>
+					<%= f.file_field :avatar %>
+					<%= f.submit "Save", class: "btn" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+

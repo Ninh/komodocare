@@ -1,0 +1,39 @@
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
+<div class="row">
+	<div class="col-lg-6">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name %>
+
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.label :avatar %>
+			<%= f.file_field :avatar %><br>
+
+			<%= f.label :date_of_birth %>
+			<%= f.text_field :date_of_birth, data: { behavior: "datepicker" } %>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker();
+  })
+</script>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+		<% end %>
+
+	</div>
+</div>
+

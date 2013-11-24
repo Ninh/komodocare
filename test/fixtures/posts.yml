@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: 
+  date_created: 2013-11-23
+
+two:
+  content: 
+  date_created: 2013-11-23

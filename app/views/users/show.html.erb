@@ -1,0 +1,50 @@
+<%= render "layouts/sidebar" %>
+
+<div class="container">
+<div class="row">
+<div class="col-lg-10" style="border-left: 1px solid #ccc;">
+	<div class="jumbotron">
+		<div class="col-lg-2">
+			<% if @user.avatar.exists? then %>
+				<p><%= image_tag @user.avatar.url(:medium), class: "img-circle", style: "width: 120px; height: 120px;" %></p>
+			<% else %>
+				<span class="icon-stack" style="padding: 0px; font-size: 94px;">
+					<i class="icon-circle icon-stack-base"></i>
+					<i class="icon-user icon-light"></i>
+				</span>
+				<%= form_for(@user, :html => { :multipart => true }) do |form| %>
+					<%= form.file_field :avatar %>
+					<%= form.submit "Save", class: "btn btn-large" %> 
+				<% end %>
+			<% end %>
+		</div>
+		<div class="col-lg-8"><h3><%= @user.full_name %></h3><%= link_to "Edit Profile", edit_user_path, class: "btn btn-primary" %>
+		</div>
+	<%= form_tag users_path, class: "", style: ";", role: "search", method: :get do |f| %>    
+		<div class="input-group">
+	        <%= text_field_tag :query, params[:query], placeholder: "Search for a course...", :size => 30, class: "typeahead form-control", style: "z-index: 150 !important;", id: "typeahead" %>
+	        <span class="input-group-btn">
+	            <button class="btn btn-default" type="button"><i class="icon-search"></i></button>
+	        </span>
+	    </div>
+	<% end %>
+	<hr>
+</div>
+
+<div class="col-lg-3">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Network
+		</div>
+		<div class="panel-body">
+			<% if @user.events.any? %>
+				<%= render :partial => 'users/profile-view', :collection => @user.events, :as => :user %>
+			<% else %>
+			<h4>No friends. <%= link_to "Go find some.", users_path %></h4>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+</div></div>
+</div>

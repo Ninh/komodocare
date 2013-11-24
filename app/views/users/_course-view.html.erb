@@ -1,0 +1,17 @@
+
+<div class="row">
+	<div class="col-lg-1" style="text-align: center;">
+		<% if user.avatar.exists? then %>
+		<span style="padding-left: 5px;"><%= image_tag user.avatar.url(:thumb), class: "img-circle", style: "width: 40px; height: 40px;" %></span>
+	<% else %>
+		<span class="icon-stack" style="padding: 0px; font-size: 20px;">
+			<i class="icon-circle icon-stack-base"></i>
+			<i class="icon-user icon-light"></i>
+		</span>
+	<% end %>
+</div><div class="col-lg-6">
+	<p style="padding-left: 20px;"><%= link_to user.full_name, user %></p>
+
+</div>
+</div>
+<hr>

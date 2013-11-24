@@ -1,3 +1,18 @@
+ <% if signed_in? %>
+
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">Medical Event Form...</h1>
+        <%= render 'shared/event_form' %>
+      </td>
+      <td class="sidebar round">
+      </td>
+    </tr>
+  </table>
+
+<% else %>
+
  <div class="jumbotron">
         <h1>Komodo</h1>
         <h2>The first wellness hub</h2>
@@ -31,3 +46,5 @@
 
 <hr>
 </div>
+
+<% end %>

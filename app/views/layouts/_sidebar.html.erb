@@ -5,7 +5,7 @@
 			<ul class="nav">
 				<li><h6>Medical Events</h6></li>
 				<% if current_user.events.any? %>
-				<%= render :partial => 'events/view', :collection => current_user.blocks, :as => :block  %>
+				<%= render :partial => 'events/view', :collection => current_user.events, :as => :event  %>
 				<% end %>
 			</ul>
 		</div>

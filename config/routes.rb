@@ -17,6 +17,9 @@ KomodoCare::Application.routes.draw do
   root :to => "static_pages#home"
 
   resources :users
+  resources :events
+  resources :rel_user_events
+  resources :posts
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,7 +10,7 @@
 	        </table>
 	        <%= will_paginate @events %>
 	    <% end %>
-	    <strong>Microposts</strong> <%= @user.events.count %>
+	    <strong>Medical Events</strong> <%= @user.events.count %>
 	</div>
 </div>
 <div class="row">
@@ -50,7 +50,7 @@
 		</div>
 		<div class="panel-body">
 			<% if @user.events.any? %>
-				<%= render :partial => 'users/profile-view', :collection => @user.events, :as => :user %>
+				
 			<% else %>
 			<h4>No friends. <%= link_to "Go find some.", users_path %></h4>
 			<% end %>

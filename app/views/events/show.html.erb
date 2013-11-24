@@ -1,0 +1,11 @@
+<h2><%= @event.title %></h2>
+
+<%= form_for(Post.new) do |f| %>
+<strong>Write a new post</strong>
+  <div class="col-lg-4">
+    <%= f.text_area :content, class: "form-control", rows: "2" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

@@ -3,12 +3,16 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
   
-  validates :date_created, :presence => true, :length => { :maximum => 140 }
+  validates :title, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true
   
-  default_scope :order => 'blocks.created_at DESC'
+  default_scope :order => 'events.created_at DESC'
   
   #scope :from_users_followed_by, lambda { |user| followed_by(user) }
+
+  def full_title
+  	"#{title}"
+  end
   
   private
   

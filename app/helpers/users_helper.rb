@@ -9,7 +9,7 @@ module UsersHelper
                                             :class => 'gravatar',
                                             :gravatar => options)
   end
-  def gravatar_large_for(user, options = { :size => 60 })
+  def gravatar_large_for(user, options = { :size => 100 })
     	gravatar_image_tag(user.email.downcase, :alt => h(user.full_name),
                                             :class => 'gravatar',
                                             :gravatar => options)

@@ -17,17 +17,17 @@
 				</ul>
 			</div>
 			<div class="col-lg-9">
-				<% @user = current_user %>
+				
 				<h4>
 				Profile Info</h4>
 				<hr>
-				<%= form_for(@user) do |f| %>
+				
 					<div class="row">
 						<div class="col-lg-3" style="text-align: right;">
 							<p style="vertical-align: middle;">Name</p>
 						</div>
 						<div class="col-lg-4">
-							<%=  current_user.first_name %>
+							<%= @user.full_name %>
 						</div>
 					</div>
 					<div class="row">
@@ -35,7 +35,7 @@
 							<p style="vertical-align: middle;">Email</p>
 						</div>
 						<div class="col-lg-4">
-							<%= current_user.email %>
+							<%= @user.email %>
 						</div>
 					</div>
 					<div class="row">
@@ -43,7 +43,7 @@
 							<p style="vertical-align: middle;">Password</p>
 						</div>
 						<div class="col-lg-4">
-							<%= current_user.password %>
+							<%=  @user.password %>
 						</div>
 					</div>
 					
@@ -52,7 +52,7 @@
 							<%= link_to "Edit", settings_profile_path, class: "btn btn-primary" %>
 						</div>
 					</div>
-				<% end %>
+				
 			</div>
 		</div>
 	</div>

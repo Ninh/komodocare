@@ -24,6 +24,7 @@ KomodoCare::Application.routes.draw do
   end
 
   root :to => "static_pages#home"
+  
   resources :users
   resources :users do
     member do

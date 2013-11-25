@@ -1,9 +1,13 @@
+<div class="row">
 <div class="col-lg-3">
-				<h4 style="color: #333;"><%= gravatar_large_for @user %> <%= @user.full_name %></h4>
+				<h4 style="color: #333;"><%= gravatar_large_for @event.user %> <%= @event.user.full_name %></h4>
 			</div>
-			
 
+
+<div class="col-lg-6">
 <h2><%= @event.title %></h2>
+</div>
+</div>
 
 
 <%= form_for [@event, @event.comments.new], :remote => false do |f| %>

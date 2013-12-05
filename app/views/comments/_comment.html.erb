@@ -1,8 +1,15 @@
-<div class="well">
-	
-<%= comment.content %>
+<div class="panel-body">
+<div class="row">
+	<div class="col-lg-1">
+	<%= gravatar_for comment.user %>
+</div>
+<div class="col-lg-11">
+	<%=  %>
+	<strong><%= comment.user_id %></strong>
+	<p><%= comment.content %></p>
+	<span class="text-muted">Posted ago <%= link_to "Edit", comment, :method => :delete %> or <%= link_to "Delete", comment, :method => :delete %>
+	</span>
 
-<span class="timestamp">
-     
-</span>
+</div>
+</div>
 </div>

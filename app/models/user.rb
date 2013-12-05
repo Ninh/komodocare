@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
 		has_many :posts, :through => :events
 
+		has_many :comments, :as => :commentable
+
 has_attached_file :avatar, :styles => { :medium => "180x180#", 
 		:thumb => "100x100#" }, 
 		:url => "/assets/users/:id/:style/:basename.:extension",

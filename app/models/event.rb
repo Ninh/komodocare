@@ -1,11 +1,14 @@
 class Event < ActiveRecord::Base
+  #acts_as_commentable
   attr_accessible :title
 
   belongs_to :user
  # has_and_belongs_to_many :user
 
-  has_many :posts, dependent: :destroy
-  has_many :comments, :as => :commentable
+ # has_many :posts, dependent: :destroy
+ # has_many :comments, :as => :commentable
+  has_many :messages, :as => :commentable, :dependent => :destroy
+
   
   validates :title, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true

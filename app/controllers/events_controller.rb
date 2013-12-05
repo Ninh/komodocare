@@ -1,11 +1,22 @@
 class EventsController < ApplicationController
+    include FilmFan::Commentable
 
   	def new
   		@event = Event.new
   	end
 
+    def index
+      @user = User.find(params[:user_id])
+      #@events = user.events.paginate(page: params[:page])
+      @events = @user.events
+     # user = User.find(1)
+      
+    end
+
   	def show
   		@event = Event.find(params[:id])
+
+      #user = User.find(params[@comment.user_id])
   	end
   
   def create

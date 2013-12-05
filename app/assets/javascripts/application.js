@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require jquery.ui.all
 //= require twitter/bootstrap
+
+$(function(){ $(document).foundation(); });

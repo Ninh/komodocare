@@ -1,0 +1,57 @@
+
+
+<div class="navbar navbar-fixed-top" style="background: #333; ">
+	<div class="container">
+		<div class="nav pull-left">
+			<ul class="nav navbar-nav">
+				<li id="nav-title-logo" style="padding: 0px"><%= link_to image_tag("komodo_nav.png", height: "34"), root_path, {:style=>'padding: 0px; padding: 0px;'} %></li>
+
+				<li class="active" >
+					<%= ilink_to 'home icon-large', root_path, class: "brand-primary" do %> <strong> HOME</strong>
+					<% end %>
+				</li>
+
+				<li class="dropdown">
+			        <a href="#" class="dropdown-toggle" style="outline: none"data-toggle="dropdown"><i class="icon-user-md icon-large"></i><strong style="padding-top: 15px;"> NETWORK</strong></a>
+			        <ul class="dropdown-menu">
+						<li><%= link_to "View My Health Network", users_path %></li>
+						<li><%= link_to "View All Users", users_path %></li>        
+					</ul>
+				</li>
+
+				<li class="active" >
+					<%= ilink_to 'group icon-large', user_events_path(current_user), class: "brand-primary" do %> <strong> DISCUSSIONS</strong>
+					<% end %>
+				</li>
+
+			</ul>
+		</div>
+			
+
+
+		<div class="nav">
+			<ul class="nav navbar-nav pull-right">
+			
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" style="padding-top: 5px; padding-bottom: 5px; outline: none"data-toggle="dropdown">
+
+<%= gravatar_small_for current_user %>
+						
+
+						<span style="padding-left: 5px; padding-top: 1px;"><%= current_user.full_name %></span> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li>
+						<%= link_to "Profile", current_user %>
+						</li>  
+						<li class="divider"></li>
+						<li>
+						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+						</li>        
+					</ul>
+				</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+</div>

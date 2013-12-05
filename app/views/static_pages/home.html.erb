@@ -1,12 +1,37 @@
+<% if user_signed_in? %>
+<% end %>
 
-
- <div class="jumbotron ">
-        <h1>KOMODO</h1>
-        <h2>The Health Collaboration Network!</h2>
-
-        <div class="center">
-          <%= link_to "Get started today!", new_user_registration_path, class: "btn btn-lg btn-primary center" %></div>
+ <div style="padding-top: 15px;">
+ <div class="jumbotron navy_blue" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-6">
+    <%= image_tag("komodo_white.png", height: "140") %>
+    <div class="row">
+  <div class="col-lg-6">
+    <div class="center" style="padding-top: 60px;">
+      <%= ilink_to "fa-stethoscope icon-lg", new_user_registration_path, class: "btn btn-lg btn-danger", style: "width: 100%;" do %>
+        Get started today!
+        <% end %>
       </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="center" style="padding-top: 60px;">
+      <%= ilink_to "google- icon-lg", new_user_registration_path, class: "btn btn-lg btn-primary ", style: "width: 100%;" do%> Learn More
+      <% end %>
+    </div>
+    </div>
+  </div>
+    </div>
+    <div class="col-lg-6 center">
+     <h2 class="" style="color: white; padding-top: 70px;">The Health Collaboration Network!</h2>
+   </div>
+   </div>
+ </div>
+
+  </div>
+</div>
+<div class="container">
 
 
 <div class="row" style="padding-top: 120px; padding-bottom: 120px;">
@@ -31,6 +56,6 @@
     <i class="icon-sitemap" style="font-size: 14em;"></i>
   </div>
 </div>
-
+</div>
 
 

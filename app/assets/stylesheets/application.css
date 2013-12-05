@@ -10,7 +10,16 @@
  *
  *= require custom_bootstrap/custom_bootstrap
  *= require_self
+  require foundation_and_overrides
+
  *= require_tree .
+  require foundation
  *= require jquery.ui.all
  *= require font-awesome
+ *= require subtlepatterns
  */
+
+body {
+	padding-top: 0;
+}
+

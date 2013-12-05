@@ -23,12 +23,24 @@ KomodoCare::Application.routes.draw do
 
   resources :events do
     resources :comments
+    resources :messages
   end
+
+  resources :messages
+
+  resources :events
+
+  resources :comments do
+    resources :users
+    resources :comments
+  end
+
 
   root :to => "static_pages#home"
 
   resources :users
   resources :users do
+    resources :events, :shallow => true
     member do
       get :profile
       get :age

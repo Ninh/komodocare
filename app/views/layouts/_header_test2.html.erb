@@ -1,0 +1,53 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-8">
+      <ul class="nav nav-pills">
+        <li id="nav-title-logo" style="padding: 0px"><%= link_to image_tag("komodo_nav.png", height: "42"), root_path, {:style=>'padding: 0px;'} %></li>
+        <% if user_signed_in? %>
+        <li><%= ilink_to "home icon-large", root_path, class: "btn btn-success btn-" do %>
+          <% end %></li>
+          <li><%= ilink_to "medkit icon-large", root_path, class: "btn btn-info" do %> Profile
+          <% end %></li>
+          <li><%= ilink_to "user-md icon-large", root_path, class: "btn btn-warning" do %> Network
+          <% end %></li>
+          <li><%= ilink_to "comments icon-large", root_path, class: "btn btn-danger btn-" do %> Discussions
+          <% end %></li>
+          
+        <% end %>
+  </ul>
+</div>
+<div class="col-lg-3">
+   <% if user_signed_in? %>
+      
+    </ul>
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-1">
+    <ul class="nav nav-pills">
+  
+    <li class="dropdown pull-right">
+      <a href="#" class="dropdown-toggle btn btn-lg btn-default" style="outline: none" data-toggle="dropdown"><i class="icon-gears icon-large"></i></a>
+          <ul class="dropdown-menu">
+            <li>
+            <%= link_to "Profile", current_user %>
+            </li>  
+            <li class="divider"></li>
+            <li>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            </li>        
+          </ul>
+      </li>
+        </ul>
+  <% else %>
+</div>
+  <div class="col-lg-4">
+ <ul class="nav navbar-nav pull-right">
+  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default pull-left", style: "margin-top: 0px;" %> 
+        <li><p class="navbar-text">or </p></li>
+        <%= link_to "Sign In", new_user_session_path, class: "btn btn-default pull-right", style: "margin-top: 0px;" %>
+        </li>
+      </ul>
+  <% end %> 
+</div><!-- /.row -->
+</div>
+

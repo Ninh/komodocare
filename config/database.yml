@@ -17,8 +17,8 @@ development:
   encoding: unicode
   database: KomodoCare_Development
   pool: 5
-  username: James
-  password: js13js
+  username: andrew
+  password: mitchoulou
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -43,13 +43,13 @@ test:
   encoding: unicode
   database: KomodoCare_Test
   pool: 5
-  username: James
-  password: js13js
+  username: andrew
+  password: mitchoulou
 
 production:
   adapter: postgresql
   encoding: unicode
   database: KomodoCare_Production
   pool: 5
-  username: James
-  password: js13js
+  username: andrew
+  password: mitchoulou

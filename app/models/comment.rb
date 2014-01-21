@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  has_ancestry
+
   attr_accessible :commentable_id, :commentable_type, :content, :user_id
 
   belongs_to :commentable, :polymorphic => true

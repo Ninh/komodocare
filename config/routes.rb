@@ -14,33 +14,35 @@ KomodoCare::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   match '/settings/profile', to: 'settings#profile'
   match '/settings/picture', to: 'settings#picture'
-   match '/settings/age', to: 'settings#age'
+  match '/settings/age', to: 'settings#age'
   match '/settings/notifications', to: 'settings#notifications'
   match '/profile', to: 'profile#profile'
   match '/profile/conditions', to: 'profile#picture'
   match '/profile/notifications', to: 'settings#notifications'
 
-
-  resources :events do
-    resources :comments
-    resources :messages
-  end
+  #resources :events do
+    #resources :comments
+    #resources :posts
+  #  resources :messages
+  #end
 
   resources :messages
 
-  resources :events
+  resource :events, :has_many => :messages
+  #map.resources :events,  :has_many => :messages
+  #match '/events#show',  :to => 'events/:id'
 
-  resources :comments do
-    resources :users
-    resources :comments
-  end
+  #resources :comments do
+  #  resources :users
+  #  resources :comments
+  #end
 
 
   root :to => "static_pages#home"
 
   resources :users
   resources :users do
-    resources :events, :shallow => true
+    resources :events,  shallow: true
     member do
       get :profile
       get :age
@@ -49,13 +51,16 @@ KomodoCare::Application.routes.draw do
       get :go_to_events
     end
   end
+
   get "users/profile"
 
-  resources :events do
-    resources :posts
-  end
+  #resources :events do
+    #resources :posts
+    #resources :messages
+  #end
   resources :rel_user_events
-  resources :posts
+  #resources :posts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

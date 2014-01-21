@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+#gem 'pg'
 gem 'devise'
 gem 'therubyracer'
 gem 'gravatar_image_tag'
@@ -56,6 +56,10 @@ gem 'rails_12factor', group: :production
 
   gem 'uglifier', '>= 1.0.3'
 #end
+
+group :test, :production do
+  gem 'pg', '0.17.0'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

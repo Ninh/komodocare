@@ -1,0 +1,15 @@
+<div class="panel-body">
+<div class="row">
+	<div class="col-lg-1">
+	<%= gravatar_for message.user %>
+</div>
+<div class="col-lg-11">
+	<%=  %>
+	<strong><%= message.user_id %></strong>
+	<p><%= message.content %></p>
+	<span class="text-muted">Posted ago <%= link_to "Edit", message, :method => :delete %> or <%= link_to "Delete", message, :method => :delete %>
+	</span>
+
+</div>
+</div>
+</div>

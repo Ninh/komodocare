@@ -2,23 +2,23 @@
 	<div class="panel panel-default">
 	<div class="panel-body">
 <div class="row-fluid">
-<div class="col-lg-3 well">
+<div class="col-lg-3 well navy_blue">
 				<center><%= gravatar_large_for current_user %>
-				<h4 style="color: #333;"> <%= current_user.full_name %></h4>
+				<h4 style="color: white;"> <%= current_user.full_name %></h4>
 				</center>
 				<hr>
 				<ul class="nav nav-pills nav-stacked">
 					<li class="active">
 						<%= link_to "Profile Info", current_user %>
 					</li>
-					<li><%= link_to "Age, height, sex...", current_user %></li>
-					<li><%= link_to "Allergies", current_user %></li>
-					<li><%= link_to "Medications", current_user %></li>
-					<li><%= link_to "Provider Info", current_user %></li>
+					<li class="btn btn-default"><%= link_to "Age, height, sex...", current_user %></li>
+					<li class="btn btn-default"><%= link_to "Allergies", current_user %></li>
+					<li class="btn btn-default"><%= link_to "Medications", current_user %></li>
+					<li class="btn btn-default"><%= link_to "Provider Info", current_user %></li>
 				</ul>
 			</div>
 			<div class="col-lg-9">
-<h1 class="">Issues</h1>
+<h1 class="">Medical Events</h1>
 
 
 <%= render 'shared/event_form' %>

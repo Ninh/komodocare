@@ -5,6 +5,9 @@ class StaticPagesController < ApplicationController
   def help
   end
 
+  def about
+  end
+
   def import_export
   end
 end

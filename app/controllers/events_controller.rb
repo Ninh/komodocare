@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    include FilmFan::Commentable
+    include KomodoCare::Commentable
 
   	def new
   		@event = Event.new

@@ -7,9 +7,9 @@
         <% if user_signed_in? %>
         <li><%= ilink_to "home icon-large", root_path, class: "btn btn-success btn-" do %>
           <% end %></li>
-          <li><%= ilink_to "medkit icon-large", root_path, class: "btn btn-info" do %> Profile
+          <li><%= ilink_to "medkit icon-large", current_user, class: "btn btn-info" do %> Profile
           <% end %></li>
-          <li><%= ilink_to "user-md icon-large", root_path, class: "btn btn-warning" do %> Network
+          <li><%= ilink_to "user-md icon-large", users_path, class: "btn btn-warning" do %> Network
           <% end %></li>
           <li><%= ilink_to "comments icon-large", root_path, class: "btn btn-danger btn-" do %> Discussions
           <% end %></li>

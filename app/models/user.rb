@@ -44,17 +44,17 @@ has_attached_file :avatar, :styles => { :medium => "180x180#",
 		"#{first_name} #{last_name}"
 	end
 
-	def registered?(course)
-		rel_user_courses.find_by_course_id(course)
-	end
+	#def registered?(course)
+	#	rel_user_courses.find_by_course_id(course)
+	#end
 
-	def register!(course)
-		rel_user_courses.create!(course_id: course.id)
-	end
+	#def register!(course)
+	#	rel_user_courses.create!(course_id: course.id)
+	#end
 
-	def drop!(course)
-		rel_user_courses.find_by_course_id(course).destroy
-	end
+	#def drop!(course)
+	#	rel_user_courses.find_by_course_id(course).destroy
+	#end
 
 	def friend?(user)
 		friendships.find_by_friend_id(user)

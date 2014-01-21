@@ -3,5 +3,5 @@ class Post < ActiveRecord::Base
 
   belongs_to :event
 
-  has_many :comments, :as => :commentable
+  has_many :comments, :as => :commentable, :dependent => :destroy
 end

@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
  # has_and_belongs_to_many :user
 
  # has_many :posts, dependent: :destroy
- # has_many :comments, :as => :commentable
+  #has_many :comments, :as => :commentable, :dependent => :destroy
   has_many :messages, :as => :commentable, :dependent => :destroy
 
   
@@ -34,3 +34,4 @@ class Event < ActiveRecord::Base
       #      :user_id => user)
     end
 end
+

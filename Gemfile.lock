@@ -261,7 +261,7 @@ DEPENDENCIES
   less-rails-bootstrap
   less-rails-fontawesome
   paperclip (~> 3.0)
-  pg
+  pg (= 0.17.0)
   public_activity
   rails (= 3.2.13)
   rails3-jquery-autocomplete

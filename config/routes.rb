@@ -1,10 +1,11 @@
 KomodoCare::Application.routes.draw do
+  resources :uploads
+
   devise_for :users, :path_names => { :sign_up => "register" }
 
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"
-  #resources :static_pages
 
   get "users/new"
   get "users/post"
@@ -20,23 +21,11 @@ KomodoCare::Application.routes.draw do
   match '/profile/conditions', to: 'profile#picture'
   match '/profile/notifications', to: 'settings#notifications'
 
-  #resources :events do
-    #resources :comments
-    #resources :posts
-  #  resources :messages
-  #end
-
   resources :messages
 
   resource :events, :has_many => :messages
   #map.resources :events,  :has_many => :messages
   #match '/events#show',  :to => 'events/:id'
-
-  #resources :comments do
-  #  resources :users
-  #  resources :comments
-  #end
-
 
   root :to => "static_pages#home"
 
@@ -53,11 +42,7 @@ KomodoCare::Application.routes.draw do
   end
 
   get "users/profile"
-
-  #resources :events do
-    #resources :posts
-    #resources :messages
-  #end
+  
   resources :rel_user_events
   #resources :posts
 

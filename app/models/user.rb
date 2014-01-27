@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 		has_many :posts, :through => :events
 
 		has_many :comments, :as => :commentable
+		has_many :uploads
 
 has_attached_file :avatar, :styles => { :medium => "180x180#", 
 		:thumb => "100x100#" }, 

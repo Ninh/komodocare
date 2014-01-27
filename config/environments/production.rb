@@ -1,4 +1,14 @@
 KomodoCare::Application.configure do
+
+  # config/environments/production.rb
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['ellsworthbucket-geophoto-photo-bucket'],
+      :access_key_id => ENV['AKIAIC6B57TSTDLWUQEQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests

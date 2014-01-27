@@ -5,22 +5,18 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'pg'
 gem 'devise'
 gem 'therubyracer'
 gem 'gravatar_image_tag'
 gem 'therubyrhino'
 gem 'rails_admin'
+gem 'nifty-generators', :group => :development
 gem 'foundation-rails'
-gem 'subtlepatterns'
 gem 'thin'
 gem 'ancestry'
-#gem 'acts_as_commentable', '3.0.1'
 gem 'acts_as_commentable_with_threading'
 gem 'awesome_nested_set'
-#gem 'twitter-bootstrap-rails'
 gem 'less-rails-bootstrap'
-#gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 gem 'less-rails'
 gem 'less-rails-fontawesome'
 gem 'public_activity'
@@ -33,7 +29,6 @@ gem 'simple-navigation'
 gem 'activerecord-postgresql-adapter'
 gem 'role_model'
 gem 'cancan'
-gem 'subtlepatterns'
 gem 'select2-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', "~> 0.2.2"
@@ -75,3 +70,5 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test

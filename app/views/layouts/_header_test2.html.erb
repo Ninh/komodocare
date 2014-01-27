@@ -1,17 +1,16 @@
 <div class="container">
-  
   <div class="row">
     <div class="col-lg-8">
-      <ul class="nav nav-pills">
+      <ul class="nav  nav-pills">
         <li id="nav-title-logo" style="padding: 0px"><%= link_to image_tag("komodo_nav.png", height: "42"), root_path, {:style=>'padding: 0px;'} %></li>
         <% if user_signed_in? %>
         <li><%= ilink_to "home icon-large", root_path, class: "btn btn-success btn-" do %>
           <% end %></li>
-          <li><%= ilink_to "medkit icon-large", current_user, class: "btn btn-info" do %> Profile
+          <li><%= ilink_to "medkit icon-large", current_user, class: "btn btn-info" do %> 
           <% end %></li>
-          <li><%= ilink_to "user-md icon-large", users_path, class: "btn btn-warning" do %> Network
+          <li><%= ilink_to "user-md icon-large", users_path, class: "btn btn-warning" do %> 
           <% end %></li>
-          <li><%= ilink_to "comments icon-large", root_path, class: "btn btn-danger btn-" do %> Discussions
+          <li><%= ilink_to "comments icon-large", root_path, class: "btn btn-danger btn-" do %> 
           <% end %></li>
           
         <% end %>
@@ -23,8 +22,9 @@
     </ul>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-1">
-    <ul class="nav nav-pills">
-  
+    <ul class="nav nav-pills pull-right">
+
+
     <li class="dropdown pull-right">
       <a href="#" class="dropdown-toggle btn btn-lg btn-default" style="outline: none" data-toggle="dropdown"><i class="icon-gears icon-large"></i></a>
           <ul class="dropdown-menu">

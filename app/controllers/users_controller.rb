@@ -1,15 +1,21 @@
 class UsersController < ApplicationController
+
 	def index
 		@users = User.paginate(page: params[:page])
 		#@events = @user.events.paginate(:page => params[:page])
 		#format.html # index.html.erb
     	#format.json { render json: @events }
+    	
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.find(params[:id], :include => :uploads)
 		#@events = @user.events.paginate(:page => params[:page])
 		@events = @user.events
+		# respond_to do |format|
+  #   		format.json { render json: @user }
+  #   		format.xml { render xml: @user }
+  #   	end
 
 	end
 

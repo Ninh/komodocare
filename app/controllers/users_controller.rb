@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id], :include => :uploads)
 		#@events = @user.events.paginate(:page => params[:page])
 		@events = @user.events
+		@uploads = @user.uploads
 		# respond_to do |format|
   #   		format.json { render json: @user }
   #   		format.xml { render xml: @user }
@@ -91,6 +92,7 @@ class UsersController < ApplicationController
 
 	def destroy
 		User.find(params[:id]).destroy
+		#@user_upload = Upload.find(params[:id])
 		flash[:success] = "User destroyed."
 		redirect_to users_url
 	end

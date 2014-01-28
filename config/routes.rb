@@ -3,6 +3,12 @@ KomodoCare::Application.routes.draw do
 
   devise_for :users, :path_names => { :sign_up => "register" }
 
+  resources :users do
+    resources :uploads
+  end
+
+  resources :uploads
+
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"
@@ -13,6 +19,7 @@ KomodoCare::Application.routes.draw do
   match '/signup',  :to => 'sessions#register'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/deleteupload', :to => 'uploads#destroy'
   match '/settings/profile', to: 'settings#profile'
   match '/settings/picture', to: 'settings#picture'
   match '/settings/age', to: 'settings#age'
@@ -42,7 +49,7 @@ KomodoCare::Application.routes.draw do
   end
 
   get "users/profile"
-  
+
   resources :rel_user_events
   #resources :posts
 

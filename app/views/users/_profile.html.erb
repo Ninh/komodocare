@@ -4,24 +4,9 @@
 	<h3>Health Portfolio</h3>
 	<hr>
 	<div class="row">
-		<%= ilink_to 'home icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Home
-		<% end %>
-		<%= ilink_to 'comments icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Conversations
-		<% end %>
-		<%= ilink_to 'group icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Network
-		<% end %>
-		<%= ilink_to 'bolt icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Activity
-		<% end %>
-		<%= ilink_to 'medkit icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Medications
-		<% end %>
-		<%= ilink_to 'tasks icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Tests
-		<% end %>
-		<%= ilink_to 'picture icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Pictures
-		<% end %>
-		<%= ilink_to 'cogs icon-4x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Settings
-		<% end %>
-
-<% provide(:title, "Settings") %>
+		<%= render "button-nav" %>
+	</div>
+<% provide(:title, "Profile") %>
 
 <h3><%= pluralize(@user.uploads.size, "Photo") %></h3>
 

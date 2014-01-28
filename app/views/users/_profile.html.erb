@@ -1,3 +1,9 @@
+<div class="container">
+	<center class="img-circle"><img class="img-circle"><%= gravatar_large_for @user %></img>
+	<h1 class="center"><%= @user.full_name %></h1>
+	<h3>Health Portfolio</h3>
+	<hr>
+
 <% provide(:title, "Settings") %>
 
 <h3><%= pluralize(@user.uploads.size, "Photo") %></h3>

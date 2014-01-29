@@ -36,6 +36,7 @@ class UploadsController < ApplicationController
   def destroy
     @upload = Upload.find(params[:id])
     @upload.destroy
-    redirect_to uploads_url, :notice => "Successfully destroyed upload."
+    @user = User.find(params[:id])
+    redirect_to @user, :notice => "Successfully destroyed upload."
   end
 end

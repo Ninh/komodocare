@@ -1,4 +1,5 @@
 <div class="well">
-	<%= link_to 'View', user_upload_path(@user) %>
-	<%= image_tag upload.photo.url %>
+	<%= link_to 'View', user_upload_path(@user), class: "btn btn-success" %>
+	<%= link_to "Destroy", user_upload_path(@user, upload), :method => :delete, class: "btn btn-danger" %> 
+	<%= image_tag upload.photo.url(:medium), class: "img-responsive" %>
 </div>

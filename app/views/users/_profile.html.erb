@@ -1,6 +1,6 @@
 <div class="container">
 	<center class="img-circle"><img class="img-circle"><%= gravatar_large_for @user %></img>
-	<h1 class="center"><%= @user.full_name %></h1>
+	<h1 class="center brand-heading"><%= @user.full_name %></h1>
 	<h3>Health Portfolio</h3>
 	<hr>
 	<div class="row">
@@ -30,66 +30,4 @@
   <%= form.file_field :avatar, class: "btn btn-default" %>
   <%= form.submit "Submit", class: "btn btn-large btn-primary" %>
 <% end %>
-
-<div class="panel panel-default">
-	<div class="panel-body">
-		<div class="row-fluid">
-			<div class="col-lg-3 well navy_blue">
-				<center class="img-circle"><img class="img-circle"><%= gravatar_large_for @user %></img>
-				<h4 style="color: white;"> <%= @user.full_name %></h4>
-				</center>
-				<hr>
-				<ul class="nav nav-pills nav-stacked">
-					
-					<li><%= link_to "Profile Info", current_user, class: "btn btn-default" %></li>
-					<li><%= link_to "Age, height, sex...", current_user, class: "btn btn-default" %></li>
-					<li><%= link_to "Allergies", current_user, class: "btn btn-default" %></li>
-					<li><%= link_to "Medications", current_user, class: "btn btn-default" %></li>
-					<li><%= link_to "Provider Info", current_user, class: "btn btn-default" %></li>
-				</ul>
-			</div>
-			<div class="col-lg-9">
-				
-				<h4>Profile Info</h4>
-				<h4><%= link_to "Medical Wikis", user_events_path(@user) %>
-				<hr>
-				
-					<div class="row">
-						<div class="col-lg-3" style="text-align: right;">
-							<p style="vertical-align: middle;">Name</p>
-						</div>
-						<div class="col-lg-4">
-							<%= @user.full_name %>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-3" style="text-align: right;">
-							<p style="vertical-align: middle;">Email</p>
-						</div>
-						<div class="col-lg-4">
-							<%= @user.email %>
-						</div>
-					</div>
-					<!--
-					<div class="row">
-						<div class="col-lg-3" style="text-align: right;">
-							<p style="vertical-align: middle;">Password</p>
-						</div>
-						<div class="col-lg-4">
-							<%=  @user.password %>
-						</div>
-					</div>
-					-->
-					<br />
-					<div class="row">
-						<div class="col-lg-4 col-lg-offset-3">
-							<%= link_to "Edit", settings_profile_path, class: "btn btn-primary" %>
-						</div>
-					</div>
-				
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 

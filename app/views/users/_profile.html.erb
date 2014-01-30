@@ -1,8 +1,4 @@
-<div class="container">
-	<center class="img-circle"><img class="img-circle"><%= gravatar_large_for @user %></img>
-	<h1 class="center brand-heading"><%= @user.full_name %></h1>
-	<h3>Health Portfolio</h3>
-	<hr>
+
 	<div class="row">
 		<%= render "button-nav" %>
 	</div>
@@ -10,24 +6,29 @@
 
 <h3><%= pluralize(@user.uploads.size, "Photo") %></h3>
 
-<div>
-	<%= render :partial => @user.uploads %>
+<div class="panel-body">
+	<ul class="timeline">
+		<%= render :partial => @user.uploads %>         
+	</ul>
 </div>
+
+<%= form_for Allergy.new(:user_id => @user.id), :html => { :multipart => true } do |f| %> 
+<%= f.hidden_field :user_id, "value" => @user.id %><p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+	<%= f.submit "Add Allergy" %>
+<% end %>
 
 <h3>Upload a Photo</h3>
 <%= form_for Upload.new(:user_id => @user.id), :html => {:multipart => true, class: 'form-horizontal' } do |f| %>
 	<%= f.hidden_field :user_id, "value" => @user.id %>
 	<p>
-		<%= f.file_field :photo %>
+		<%= f.file_field :photo, class: "btn btn-warning btn-lg" %>
 	</p>
-	<p><%= f.submit "Upload" %></p>
+	<p><%= f.submit "Upload", class: "btn btn-success btn-lg" %></p>
 <% end %>	
-
-
-<%= image_tag @user.avatar.url(:medium) %>
-
-<%= form_for @user, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :avatar, class: "btn btn-default" %>
-  <%= form.submit "Submit", class: "btn btn-large btn-primary" %>
-<% end %>
 

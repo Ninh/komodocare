@@ -1,5 +1,15 @@
-<div class="well">
-	<%= link_to 'View', user_upload_path(@user), class: "btn btn-success" %>
-	<%= link_to "Destroy", user_upload_path(@user, upload), :method => :delete, class: "btn btn-danger" %> 
-	<%= image_tag upload.photo.url(:medium), class: "img-responsive" %>
-</div>
+<li class="timeline-inverted">
+    <div class="timeline-badge"><i class="fa fa-camera"></i>
+    </div>
+    <div class="timeline-panel">
+        <div class="timeline-heading">
+            <h4 class="timeline-title">Photo</h4>
+        </div>
+        <div class="timeline-body">
+        	<%= image_tag upload.photo.url(:medium), class: "img-thumbnail img-responsive" %>
+            <%= link_to 'View', user_upload_path(@user, upload), class: "btn btn-success" %>
+<%= link_to 'Comment', user_upload_path(@user), class: "btn btn-warning" %>
+<%= link_to "Destroy", user_upload_path(@user, upload), :method => :delete, class: "btn btn-danger" %>
+        </div>
+    </div>
+</li>

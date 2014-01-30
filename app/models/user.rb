@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
+  acts_as_messageable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,6 +13,8 @@ class User < ActiveRecord::Base
 
 		has_many :comments, :as => :commentable
 		has_many :uploads
+		has_many :allergies
+		has_many :medications
 
 has_attached_file :avatar, :styles => { :medium => "180x180#", 
 		:thumb => "100x100#" }, 

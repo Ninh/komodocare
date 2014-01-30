@@ -12,6 +12,8 @@ gem 'therubyrhino'
 gem 'rails_admin'
 gem 'nifty-generators', :group => :development
 gem 'foundation-rails'
+gem 'mailboxer'
+gem 'messaging', git: 'git://github.com/frodefi/rails-messaging.git'
 gem 'thin'
 gem 'ancestry'
 gem 'acts_as_commentable_with_threading'

@@ -1,0 +1,16 @@
+<%= form_for @medication do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :dosage %><br />
+    <%= f.text_field :dosage %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

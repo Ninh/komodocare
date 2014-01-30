@@ -1,7 +1,11 @@
+
+
+<p>Update Upload With New Image</p>
+<%= image_tag @upload.photo.url(:medium), class: "img-thumbnail img-responsive" %>
+
 <%= form_for @upload do |f| %>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </p>
-  <p><%= f.submit %></p>
+<p>
+		<%= f.file_field :photo, class: "btn btn-warning btn-lg" %>
+	</p>
+	<p><%= f.submit "Update Upload", class: "btn btn-success btn-lg" %></p>
 <% end %>

@@ -1,6 +1,7 @@
 class UploadsController < ApplicationController
   def index
-    @uploads = Upload.all
+    @user = User.find(params[:user_id])
+    @uploads = @user.uploads
   end
 
   def show

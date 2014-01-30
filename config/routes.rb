@@ -1,10 +1,22 @@
 KomodoCare::Application.routes.draw do
+  resources :medications
+
+  resources :allergies
+
+  mount Messaging::Engine => "/messaging"
+
+  devise_for :messaging_users
+
   resources :uploads
+  resources :allergies
+  resources :medications
 
   devise_for :users, :path_names => { :sign_up => "register" }
 
   resources :users do
     resources :uploads
+    resources :allergies
+    resources :medications
   end
 
   resources :uploads

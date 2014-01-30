@@ -1,3 +1,8 @@
+<div class="container">
+	<center class="img-circle"><img class="img-circle"><%= gravatar_large_for @user %></img>
+	<h1 class="center brand-heading"><%= @user.full_name %></h1>
+	<h3>Health Portfolio</h3>
+	<hr>
 
 		<%= ilink_to 'home icon-3x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Home
 		<% end %>
@@ -5,11 +10,12 @@
 		<% end %>
 		<%= ilink_to 'bolt icon-3x', user_events_path(@user), style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Activity
 		<% end %>
-		<%= ilink_to 'medkit icon-3x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Medications
+		<%= ilink_to 'medkit icon-3x', user_medications_path(@user), style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Medications
 		<% end %>
 		<%= ilink_to 'tasks icon-3x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Tests
 		<% end %>
+		<%= ilink_to 'cogs icon-3x', user_allergies_path(@user), style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Allergies
+		<% end %>
 		<%= ilink_to 'picture icon-3x', user_uploads_path(@user), style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Pictures
 		<% end %>
-		<%= ilink_to 'cogs icon-3x', current_user, style: 'padding: 20px;', class: "btn btn-default btn-lg" do %><br>Settings
-		<% end %>
+	</center>

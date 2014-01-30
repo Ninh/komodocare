@@ -1,0 +1,9 @@
+one:
+  user_id: 1
+  dosage: MyString
+  description: MyString
+
+two:
+  user_id: 1
+  dosage: MyString
+  description: MyString

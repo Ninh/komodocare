@@ -1,0 +1,23 @@
+<div class="row">
+ <%= render "users/button-nav" %>
+  </div>
+  <h3>Medications</h3>Medications
+<table>
+  <tr>
+    <th>User</th>
+    <th>Dosage</th>
+    <th>Description</th>
+  </tr>
+  <% for medication in @medications %>
+    <tr>
+      <td><%= medication.user_id %></td>
+      <td><%= medication.dosage %></td>
+      <td><%= medication.description %></td>
+      <td><%= link_to "Show", medication %></td>
+      <td><%= link_to "Edit", edit_medication_path(medication) %></td>
+      <td><%= link_to "Destroy", medication, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Medication", new_medication_path %></p>

@@ -1,0 +1,20 @@
+
+
+<p>
+  <strong>User:</strong>
+  <%= @allergy.user_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @allergy.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @allergy.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_allergy_path(@allergy) %> |
+  <%= link_to "Destroy", @allergy, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", allergies_path %>
+</p>

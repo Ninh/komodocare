@@ -1,0 +1,23 @@
+<div class="row">
+    <%= render "users/button-nav" %>
+  </div>
+  <h3>Allergies</h3>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% for allergy in @allergies %>
+    <tr>
+      <td><%= allergy.user_id %></td>
+      <td><%= allergy.name %></td>
+      <td><%= allergy.description %></td>
+      <td><%= link_to "Show", allergy %></td>
+      <td><%= link_to "Edit", edit_allergy_path(allergy) %></td>
+      <td><%= link_to "Destroy", allergy, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Allergy", new_allergy_path %></p>

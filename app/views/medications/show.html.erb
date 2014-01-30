@@ -1,0 +1,20 @@
+<% title "Medication" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @medication.user_id %>
+</p>
+<p>
+  <strong>Dosage:</strong>
+  <%= @medication.dosage %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @medication.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_medication_path(@medication) %> |
+  <%= link_to "Destroy", @medication, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", medications_path %>
+</p>
